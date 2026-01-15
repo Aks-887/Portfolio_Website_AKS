@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <style>
+          body.fade-transition {
+            transition: opacity 0.7s;
+            opacity: 0.3;
+          }
+        </style>
+    <meta charset="utf-8" />
+    <script>
+      // Always show opening page on refresh or direct access
+      if (!sessionStorage.getItem('aks_welcome_shown')) {
+        window.location.replace('opening.html');
+      } else {
+        sessionStorage.removeItem('aks_welcome_shown');
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.style.opacity = 0;
+          document.body.style.transition = 'opacity 0.7s';
+          setTimeout(function() {
+            document.body.style.opacity = 1;
+          }, 50);
+
+          // Add fade effect on scroll
+          let fadeTimeout;
+          window.addEventListener('scroll', function() {
+            document.body.classList.add('fade-transition');
+            clearTimeout(fadeTimeout);
+            fadeTimeout = setTimeout(function() {
+              document.body.classList.remove('fade-transition');
+            }, 400);
+          });
+        });
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Creative Video Editor — Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <div class="left-group">
+          <a class="avatar" href="#about" aria-label="Profile">
+            <img src="Assects/20250718_174459(1).jpg" alt="Ayush Kumar Singh">
+          </a>
+          <a class="brand" href="#home" aria-label="Home">
+            <svg class="brand-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="url(#g)" stroke-width="1.6" /><path d="M10 8v8l6-4z" fill="url(#g)"/></svg>
+            <span>AKS EDITOR</span>
+          </a>
+        </div>
+        <nav class="links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="#contact">Contact</a>
+          <button class="icon-btn" aria-label="menu icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero section container">
+        <div class="hero-left reveal">
+          <h1 class="title gradient-text">Creative Video Editor</h1>
+          <p class="tagline">Crafting compelling stories through cinematic post-production.</p>
+          <div class="hero-cta">
+            <button id="watchBtn" class="btn primary">WATCH SHOWREEL</button>
+            <a id="viewWork" href="portfolio.html" class="btn ghost">VIEW WORK</a>
+          </div>
+          <p class="hero-note">Available for freelance & long-term collaborations.</p>
+        </div>
+        <div class="hero-right reveal">
+          <div class="hero-graphic" data-parallax="0.12">
+            <!-- stylized timeline graphic -->
+            <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#6EE7F9" />
+                  <stop offset="1" stop-color="#7C3AED" />
+                </linearGradient>
+              </defs>
+              <rect x="12" y="40" rx="12" ry="12" width="376" height="180" fill="#071029" stroke="url(#g1)" stroke-opacity="0.12" />
+              <g opacity="0.95">
+                <rect x="32" y="72" width="320" height="18" rx="9" fill="#0E1B2D" />
+                <circle cx="96" cy="81" r="8" fill="url(#g1)" />
+                <circle cx="160" cy="81" r="8" fill="#2B2B2B" />
+                <circle cx="224" cy="81" r="8" fill="#2B2B2B" />
+                <rect x="32" y="110" width="120" height="12" rx="6" fill="#071029" stroke="url(#g1)"/> 
+                <rect x="164" y="110" width="160" height="12" rx="6" fill="#071029" stroke="#162237" stroke-opacity="0.35"/>
+                <path d="M320 150c0 10-20 18-44 18s-44-8-44-18 20-18 44-18 44 8 44 18z" fill="#0A1220" stroke="url(#g1)" stroke-opacity="0.6"/>
+                <g transform="translate(280,120)">
+                  <circle cx="0" cy="0" r="28" fill="rgba(124,58,237,0.06)" />
+                  <path d="M-8 -12 L12 0 L-8 12 z" fill="url(#g1)"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about container">
+        <h2 class="section-title reveal">ABOUT ME</h2>
+        <div class="about-grid">
+          <div class="photo reveal">
+            <img src="Assects/20250622_101122(1).jpg" alt="Profile photo" />
+          </div>
+          <div class="about-copy reveal">
+            <div class="info">
+              <p class="name">Ayush Kumar Singh</p>
+              <p class="profession">B.Tech CSE</p>
+              <p class="contact"><a href="mailto:Ayushkrsingh542005@gmail.com">Ayushkrsingh542005@gmail.com</a> · <a href="tel:+6201742678">6201742678</a></p>
+            </div>
+            <p>I'm a passionate video editor specializing in cinematic storytelling. I combine technical expertise with a strong narrative sense to craft films that move audiences.</p>
+            <p>Over the years I've worked across narrative, commercial, and documentary projects — from fast-paced music videos to long-form documentaries and brand commercials. My workflow prioritizes color, sound design, and pacing to deliver emotional beats exactly where they belong.</p>
+            <p>I collaborate closely with directors and producers, bringing creative problem-solving and meticulous attention to detail to every timeline.</p>
+            <div class="about-actions">
+              <a id="downloadResume" class="btn outline" href="Assects/CV.pdf" download="Ayush_Kumar_Singh_CV.pdf">
+                <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 11l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>DOWNLOAD RESUME</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section portfolio container">
+        <h2 class="section-title reveal">FEATURED PROJECTS</h2>
+        <div class="grid projects">
+          <!-- sample project cards -->
+          <article class="card reveal" data-video-id="Assects/Featured_Project/Without Logo.mp4">
+            <div class="thumb">
+              <div class="play-overlay">
+                <svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="card-meta">
+              <h3>Music Video — "Eclipse"</h3>
+              <p>Music Video</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-video-id="Assects/Featured_Project/FINAL_DF.mp4">
+            <div class="thumb">
+              <div class="play-overlay">
+                <svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="card-meta">
+              <h3>Brand Spot — "Pulse"</h3>
+              <p>Brand Commercial</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-video-id="Assects/Featured_Project/Tech_Career_01.mp4">
+            <div class="thumb">
+              <div class="play-overlay">
+                <svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="card-meta">
+              <h3>Short Film — "Between Frames"</h3>
+              <p>Narrative</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-video-id="Assects/Featured_Project/0721.mp4">
+            <div class="thumb">
+              <div class="play-overlay">
+                <svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="card-meta">
+              <h3>Documentary — "Coastlines"</h3>
+              <p>Documentary</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-video-id="Assects/Featured_Project/20th.mp4">
+            <div class="thumb">
+              <div class="play-overlay">
+                <svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="card-meta">
+              <h3>Trailer — "Shadow City"</h3>
+              <p>Trailer</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-video-id="Assects/Featured_Project/0729(4).mp4">
+            <div class="thumb">
+              <div class="play-overlay">
+                <svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="card-meta">
+              <h3>Ad Campaign — "Motion"</h3>
+              <p>Commercial</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="tools" class="section tools container">
+        <h2 class="section-title reveal">MY TOOLKIT</h2>
+        <div class="tools-grid reveal">
+          <div class="tool">
+            <img class="tool-img" src="Assects/Logo_Section/download.webp" alt="Canva logo">
+            <span>Canva</span>
+          </div>
+          <div class="tool">
+            <img class="tool-img" src="Assects/Logo_Section/OIP.webp" alt="After Effects logo">
+            <span>After Effects</span>
+          </div>
+          <div class="tool">
+            <img class="tool-img" src="Assects/Logo_Section/OIP (1).webp" alt="DaVinci Resolve logo">
+            <span>DaVinci Resolve</span>
+          </div>
+          <div class="tool">
+            <img class="tool-img" src="Assects/Logo_Section/OIP (2).webp" alt="Final Cut Pro logo">
+            <span>Final Cut Pro</span>
+          </div>
+          <div class="tool">
+            <img class="tool-img" src="Assects/Logo_Section/OIP (3).webp" alt="CapCut logo">
+            <span>CapCut</span>
+          </div>
+          <div class="tool">
+            <div class="tool-img-multi">
+              <img class="tool-img" src="Assects/Logo_Section/OIP (4).webp" alt="Photoshop logo">
+            </div>
+            <span>Photoshop</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact container">
+        <h2 class="section-title reveal">GET IN TOUCH</h2>
+        <div class="contact-grid">
+          <form id="contactForm" class="contact-form reveal" novalidate>
+            <label><input name="name" placeholder="Name" required></label>
+            <label><input type="email" name="email" placeholder="Email" required></label>
+            <label><input name="subject" placeholder="Subject"></label>
+            <label><textarea name="message" placeholder="Message" rows="6" required></textarea></label>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">SEND MESSAGE</button>
+            </div>
+          </form>
+
+          <aside class="connect reveal">
+            <div class="connect-card">
+              <h3>CONNECT WITH ME</h3>
+              <div class="socials">
+                <a href="#" aria-label="YouTube" class="social">YouTube</a>
+                <a href="#" aria-label="Vimeo" class="social">Vimeo</a>
+                <a href="#" aria-label="Instagram" class="social">Instagram</a>
+                <a href="#" aria-label="LinkedIn" class="social">LinkedIn</a>
+              </div>
+            </div>
+
+            <div class="comments">
+              <h4>Client Comments</h4>
+              <blockquote>“Transformed our footage into a polished narrative that doubled engagement.” — Creative Director</blockquote>
+              <blockquote>“Exceptional sense of timing and color. The edit elevated the whole campaign.” — Producer</blockquote>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">© 2026 Creative Video Editor — All rights reserved</div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="videoModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-panel">
+        <button class="modal-close" aria-label="close">×</button>
+        <div class="video-wrap" id="videoWrap"></div>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal image-modal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-panel">
+        <button class="modal-close" aria-label="close">×</button>
+        <div class="image-wrap" id="imageWrap"></div>
+      </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

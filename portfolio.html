@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Creative Video Editor</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <div class="left-group">
+          <a class="avatar" href="index.html#about" aria-label="Profile">
+            <img src="Assects/20250718_174459(1).jpg" alt="Ayush Kumar Singh">
+          </a>
+          <a class="brand" href="index.html" aria-label="Home">
+            <svg class="brand-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="url(#g)" stroke-width="1.6" /><path d="M10 8v8l6-4z" fill="url(#g)"/></svg>
+            <span>AKS EDITOR</span>
+          </a>
+        </div>
+        <nav class="links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="#">Portfolio</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section" id="portfolioPage">
+      <h1 class="section-title">PORTFOLIO</h1>
+      <p class="tagline">All projects and case studies — click a card to view details.</p>
+
+      <div class="portfolio-layout">
+        <aside class="portfolio-cats">
+          <ul>
+            <li><button class="cat active" data-cat="all" aria-pressed="true">All</button></li>
+            <li><button class="cat" data-cat="college" aria-pressed="false">College Events</button></li>
+            <li><button class="cat" data-cat="external" aria-pressed="false">External Events</button></li>
+            <li><button class="cat" data-cat="freelance" aria-pressed="false">Freelancing</button></li>
+            <li><button class="cat" data-cat="self" aria-pressed="false">Self</button></li>
+          </ul>
+        </aside>
+
+        <div class="portfolio-content">
+          <div class="grid projects" id="projectsGrid">
+            <article class="card" data-video-id="https://www.youtube.com/embed/ysz5S6PUM-U" data-category="college">
+              <div class="thumb"><div class="play-overlay"><svg viewBox="0 0 24 24" width="42" height="42"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div></div>
+              <div class="card-meta"><h3>College Event — "Eclipse"</h3><p>College Events</p></div>
+            </article>
+
+            <article class="card" data-video-id="https://www.youtube.com/embed/ScMzIvxBSi4" data-category="external">
+              <div class="thumb"></div>
+              <div class="card-meta"><h3>External Spot — "Pulse"</h3><p>External Events</p></div>
+            </article>
+
+            <article class="card" data-video-id="https://www.youtube.com/embed/2Vv-BfVoq4g" data-category="freelance">
+              <div class="thumb"></div>
+              <div class="card-meta"><h3>Freelance — "Between Frames"</h3><p>Freelancing</p></div>
+            </article>
+
+            <article class="card" data-video-id="https://www.youtube.com/embed/3fumBcKC6RE" data-category="self">
+              <div class="thumb"></div>
+              <div class="card-meta"><h3>Personal — "Coastlines"</h3><p>Self</p></div>
+            </article>
+
+            <article class="card" data-video-id="https://www.youtube.com/embed/L_jWHffIx5E" data-category="external">
+              <div class="thumb"></div>
+              <div class="card-meta"><h3>External — "Shadow City"</h3><p>External Events</p></div>
+            </article>
+
+            <article class="card" data-video-id="https://www.youtube.com/embed/kXYiU_JCYtU" data-category="freelance">
+              <div class="thumb"></div>
+              <div class="card-meta"><h3>Freelance — "Motion"</h3><p>Freelancing</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">© 2026 Creative Video Editor — All rights reserved</div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
